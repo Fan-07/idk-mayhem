@@ -1,46 +1,135 @@
-*{
-    font-family:sans-serif;
-    margin:0px;
-    padding:0px;
-    text-decoration:none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.sidebar{
-    position:fixed;
-    left:0;
-    width:200px;
-    height:100%;
-    background:#042331
-    
+
+body {
+    background: #111;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
-.sidebar header{
-    font-size:30px;
-    color:beige;
-    line-height:70px;
-    background:#063144;
-    text-align:center;
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
 }
-.sidebar ul a{
-    display:block;
-    height:100%;
-    width:100%;
-    line-height:65px;
-    color:white;
-    padding-left:40px;
-    box-sizing:border-box;
-    font-size:20px;
-    border-top:1px solid gray;
-    border-bottom:1px solid black;
-    transition: 0.1s;
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
 }
-ul li:hover a{
-    padding-left:50px;
-    font-weight:bold;
-    color:rgb(222, 248, 239);
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
-h3{
-    transition:0.4s;
-    font-weight:lighter;
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
 }
-h3:hover{
-    transform:scale(1.1);
+
+nav a:hover {
+    transform: scale(1.2);
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+}
+
+.hero p {
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 40px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.about {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    opacity: 0.5;
+}
+
+.idk-float {
+    position: fixed;
+    color: rgba(255,255,255,0.15);
+    pointer-events: none;
+    user-select: none;
+    font-weight: bold;
+    animation: drift linear forwards;
+}
+
+@keyframes drift {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(-150vh) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
